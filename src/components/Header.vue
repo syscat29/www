@@ -5,17 +5,14 @@
 <template>
   <header>
     <div class="profile">
-      <!-- <img
-        src="https://avatars.githubusercontent.com/u/60985614?v=4"
-        alt="Avatar"
-      /> -->
+      <!-- <img src="https://avatars.githubusercontent.com/u/60985614?v=4" alt="Avatar" /> -->
       <div>
         <h1>SYSCAT</h1>
-        <p>Web Developer</p>
+        <p>Developer</p>
       </div>
     </div>
 
-    <nav class="socials">
+    <nav>
       <a href="/" target="_blank">
         <Github size="20" />
       </a>
@@ -53,7 +50,7 @@
     }
   }
 
-  .socials {
+  nav {
     display: flex;
 
     a {
