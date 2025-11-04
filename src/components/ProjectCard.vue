@@ -1,6 +1,7 @@
 <script setup>
   import ArrowRight from "../icons/ArrowRight.vue"
 
+  // eslint-disable
   const props = defineProps({
     name: {
       type: String,
@@ -34,7 +35,7 @@
     background-color: transparent;
     display: flex;
     align-items: center;
-    padding: 1rem 0.750rem;
+    padding: 1rem 0.75rem;
     border-radius: 8px;
     transition: all 0.3s ease-in-out;
     border: 1px solid #252525;
