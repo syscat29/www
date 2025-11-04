@@ -1,7 +1,7 @@
 <script setup>
-  import ArrowRight from "../icons/ArrowRight.vue"
+  import Github from "@/icons/Github.vue"
+  import ArrowExternal from "@/icons/ArrowExternal.vue"
 
-  // eslint-disable
   const props = defineProps({
     name: {
       type: String,
@@ -15,59 +15,87 @@
       type: String,
       default: null,
     },
+    githubUrl: {
+      type: String,
+      default: null,
+    },
+    liveUrl: {
+      type: String,
+      default: null,
+    },
   })
 </script>
 
 <template>
-  <article>
-    <img v-if="image" :src="image" :alt="name" />
-    <img v-else src="/projects/default.png" :alt="name" />
-    <div>
-      <h3>{{ name }}</h3>
-      <p>{{ description }}</p>
+  <article class="project">
+    <div class="project__meta">
+      <img v-if="image" :src="image" :alt="name" />
+      <img v-else src="/projects/default.png" :alt="name" />
+      <div>
+        <h3>{{ name }}</h3>
+        <p>{{ description }}</p>
+      </div>
     </div>
-    <ArrowRight size="16" />
+    <div class="project__links">
+      <a v-if="githubUrl" :href="githubUrl" target="_blank">
+        <Github size="16" />
+      </a>
+      <a v-if="liveUrl" :href="liveUrl" target="_blank">
+        <ArrowExternal size="16" />
+      </a>
+    </div>
   </article>
 </template>
 
 <style scoped>
-  article {
-    background-color: transparent;
+  .project {
+    background-color: #202020;
     display: flex;
-    align-items: center;
-    padding: 1rem 0.75rem;
     border-radius: 8px;
     transition: all 0.3s ease-in-out;
-    border: 1px solid #252525;
 
-    img {
-      align-self: start;
-      margin-right: 0.5rem;
-      height: 24px;
-      width: 24px;
-    }
+    .project__meta {
+      display: flex;
+      gap: 0.5rem;
+      padding: 1rem 0.75rem;
 
-    svg {
-      margin-left: auto;
-      transition: all 0.3s ease-in-out;
-    }
+      img {
+        height: 24px;
+        width: 24px;
+      }
 
-    &:hover {
-      background-color: #191919;
+      h3 {
+        color: var(--text-primary);
+        font-weight: 500;
+      }
 
-      svg {
-        transform: rotate(-45deg);
+      p {
+        color: var(--text-faint);
+        font-size: 14px;
       }
     }
 
-    h3 {
-      color: var(--text-primary);
-      font-weight: 500;
-    }
+    .project__links {
+      padding: 0.75rem;
+      margin-left: auto;
+      display: flex;
+      align-items: start;
+      gap: 0.25rem;
 
-    p {
-      color: var(--text-faint);
-      font-size: 14px;
+      a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem;
+        border-radius: 4px;
+        color: var(--text-muted);
+        transition: all 0.3s ease;
+
+        &:hover {
+          background-color: #ffffff15;
+          color: var(--text-strong);
+        }
+      }
     }
   }
 </style>

@@ -8,7 +8,13 @@
     <h2>Projects</h2>
     <div class="projects">
       <a v-for="project in projects" :href="project.url" target="_blank">
-        <ProjectCard :name="project.name" :description="project.description" :image="project.image" />
+        <ProjectCard
+          :name="project.name"
+          :description="project.description"
+          :image="project.image"
+          :githubUrl="project.githubUrl"
+          :liveUrl="project.liveUrl"
+        />
       </a>
     </div>
   </section>
