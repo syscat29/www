@@ -7,7 +7,7 @@
     <div class="profile">
       <!-- <img src="https://avatars.githubusercontent.com/u/60985614?v=4" alt="Avatar" /> -->
       <div>
-        <h1>SYSCAT</h1>
+        <h1>Syscat</h1>
         <p>Developer</p>
       </div>
     </div>
@@ -42,6 +42,7 @@
     h1 {
       color: var(--text-strong);
       font-weight: 700;
+      font-size: 1.25rem;
     }
 
     p {
