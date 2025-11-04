@@ -1,6 +1,5 @@
 <script setup>
   import Github from "../icons/Github.vue"
-  import Linkedin from "../icons/Linkedin.vue"
 </script>
 
 <template>
