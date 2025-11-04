@@ -1,5 +1,5 @@
 <script setup>
-  import Github from "../icons/Github.vue"
+  import Github from "@/icons/Github.vue"
 </script>
 
 <template>

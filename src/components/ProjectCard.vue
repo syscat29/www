@@ -1,6 +1,6 @@
 <script setup>
-  import Github from "../icons/Github.vue"
-  import ArrowExternal from "../icons/ArrowExternal.vue"
+  import Github from "@/icons/Github.vue"
+  import ArrowExternal from "@/icons/ArrowExternal.vue"
 
   const props = defineProps({
     name: {
