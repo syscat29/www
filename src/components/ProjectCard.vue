@@ -19,7 +19,7 @@
       type: String,
       default: null,
     },
-    liveUrl: {
+    url: {
       type: String,
       default: null,
     },
@@ -40,7 +40,7 @@
       <a v-if="githubUrl" :href="githubUrl" target="_blank">
         <Github size="16" />
       </a>
-      <a v-if="liveUrl" :href="liveUrl" target="_blank">
+      <a v-if="url" :href="url" target="_blank">
         <ArrowExternal size="16" />
       </a>
     </div>

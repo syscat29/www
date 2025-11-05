@@ -7,15 +7,14 @@
   <section>
     <h2>Projects</h2>
     <div class="projects">
-      <a v-for="project in projects" :href="project.url" target="_blank">
-        <ProjectCard
-          :name="project.name"
-          :description="project.description"
-          :image="project.image"
-          :githubUrl="project.githubUrl"
-          :liveUrl="project.liveUrl"
-        />
-      </a>
+      <ProjectCard
+        v-for="project in projects"
+        :name="project.name"
+        :description="project.description"
+        :image="project.image"
+        :githubUrl="project.githubUrl"
+        :url="project.url"
+      />
     </div>
   </section>
 </template>
