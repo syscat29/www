@@ -8,8 +8,8 @@
     <div class="profile">
       <!-- <img src="https://avatars.githubusercontent.com/u/60985614?v=4" alt="Avatar" /> -->
       <div>
-        <h1>Angel</h1>
-        <p>@sachellein</p>
+        <h1>Syscat</h1>
+        <p>Developer</p>
       </div>
     </div>
 
