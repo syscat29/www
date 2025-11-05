@@ -11,7 +11,7 @@
       type: String,
       required: true,
     },
-    image: {
+    icon: {
       type: String,
       default: null,
     },
@@ -29,7 +29,7 @@
 <template>
   <article class="project">
     <div class="project__meta">
-      <img v-if="image" :src="image" :alt="name" />
+      <img v-if="icon" :src="icon" :alt="name" />
       <img v-else src="/projects/default.png" :alt="name" />
       <div>
         <h3>{{ name }}</h3>

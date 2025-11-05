@@ -11,7 +11,7 @@
         v-for="project in projects"
         :name="project.name"
         :description="project.description"
-        :image="project.image"
+        :icon="project.icon"
         :githubUrl="project.githubUrl"
         :url="project.url"
       />
