@@ -1,4 +1,5 @@
 <script setup>
+  import Codeberg from "@/icons/Codeberg.vue"
   import Github from "@/icons/Github.vue"
 </script>
 
@@ -13,8 +14,11 @@
     </div>
 
     <nav>
-      <a href="/" target="_blank">
+      <a href="https://github.com/syscat29" target="_blank">
         <Github size="20" />
+      </a>
+      <a href="https://codeberg.org/aevilcat" target="_blank">
+        <Codeberg size="20" />
       </a>
     </nav>
   </header>
