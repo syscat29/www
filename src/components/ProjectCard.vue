@@ -29,7 +29,7 @@
 <template>
   <article class="project">
     <div class="project__meta">
-      <img v-if="icon" :src="icon" :alt="name" />
+      <img :src="icon" :alt="name" />
       <div>
         <h3>{{ name }}</h3>
         <p>{{ description }}</p>
