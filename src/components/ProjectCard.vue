@@ -13,7 +13,7 @@
     },
     icon: {
       type: String,
-      default: null,
+      default: "/images/projects/default.png",
     },
     githubUrl: {
       type: String,
@@ -30,7 +30,6 @@
   <article class="project">
     <div class="project__meta">
       <img v-if="icon" :src="icon" :alt="name" />
-      <img v-else src="/projects/default.png" :alt="name" />
       <div>
         <h3>{{ name }}</h3>
         <p>{{ description }}</p>
