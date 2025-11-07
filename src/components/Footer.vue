@@ -1,15 +1,15 @@
+<script setup lang="ts">
+  import ArrowExternal from "@/icons/ArrowExternal.vue"
+</script>
+
 <template>
   <footer>
+    <p>&copy; Syscat</p>
     <p>
-      <a
-        href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
-        target="_blank"
-      >
-        CC BY-NC-SA 4.0
+      <a href="https://github.com/syscat29/www" target="_blank">
+        Source
+        <ArrowExternal size="12" />
       </a>
-    </p>
-    <p>
-      <a href="https://github.com/syscat29/www" target="_blank"> Source </a>
     </p>
   </footer>
 </template>
@@ -22,7 +22,14 @@
     align-items: center;
 
     a {
-      text-decoration: underline;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: var(--text-strong);
+      }
     }
   }
 </style>
