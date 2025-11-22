@@ -1,5 +1,5 @@
 <script setup>
-  import ArrowExternal from "@/icons/ArrowExternal.vue"
+  import ArrowExternal from "@/icons/ArrowExternal.vue";
 </script>
 
 <template>

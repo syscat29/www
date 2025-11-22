@@ -6,4 +6,4 @@ export const projects = [
     url: "https://katt-five.vercel.app/",
     icon: "/images/projects/katt.png",
   },
-]
+];

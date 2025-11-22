@@ -1,6 +1,6 @@
 <script setup>
-  import Codeberg from "@/icons/Codeberg.vue"
-  import Github from "@/icons/Github.vue"
+  import Codeberg from "@/icons/Codeberg.vue";
+  import Github from "@/icons/Github.vue";
 </script>
 
 <template>

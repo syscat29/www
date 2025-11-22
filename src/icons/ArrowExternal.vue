@@ -1,3 +1,16 @@
+<script setup>
+  const props = defineProps({
+    size: {
+      type: [Number, String],
+      default: 24,
+    },
+    color: {
+      type: String,
+      default: "currentColor",
+    },
+  });
+</script>
+
 <template>
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -15,16 +28,3 @@
     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
   </svg>
 </template>
-
-<script setup>
-  const props = defineProps({
-    size: {
-      type: [Number, String],
-      default: 24,
-    },
-    color: {
-      type: String,
-      default: "currentColor",
-    },
-  })
-</script>
