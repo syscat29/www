@@ -1,17 +1,15 @@
 <script setup>
-  import Header from "@/components/Header.vue"
-  import About from "@/components/About.vue"
-  import Footer from "@/components/Footer.vue"
-  import Projects from "@/components/Projects.vue"
+  import Header from "@/components/Header.vue";
+  import Footer from "@/components/Footer.vue";
+  import Projects from "@/components/Projects.vue";
 </script>
 
 <template>
-  <main>
+  <div class="container">
     <Header />
-    <About />
     <Projects />
     <Footer />
-  </main>
+  </div>
 </template>
 
 <style global>
@@ -21,6 +19,14 @@
     font-style: normal;
     font-weight: 100 900;
     src: url("/fonts/Geist.ttf"), format("truetype");
+  }
+
+  @font-face {
+    font-family: "Geist Mono";
+    font-display: swap;
+    font-style: normal;
+    font-weight: 100 900;
+    src: url("/fonts/GeistMono.ttf"), format("truetype");
   }
 
   *,
@@ -33,7 +39,8 @@
 
   h1,
   h2,
-  h3 {
+  h3,
+  h4 {
     font-weight: inherit;
     font-size: inherit;
   }
@@ -43,17 +50,23 @@
     text-decoration: none;
   }
 
-  :root {
-    --bg-primary: #0d0d0d;
-    --bg-secondary: #141414;
-    --text-primary: #f0f0f0;
-    --text-muted: #c7c7c7;
-    --text-faint: #b3b3b3;
-    --text-strong: #ffffff;
+  ::selection {
+    background-color: #ffffff30;
+    color: var(--text-primary);
+  }
 
-    color-scheme: light dark;
-    color: var(--text-muted);
-    background-color: var(--bg-secondary);
+  :root {
+    --font-sans: "Geist", system-ui, Avenir, Helvetica, Arial, sans-serif;
+    --font-mono: "Geist Mono", monospace;
+
+    --background: #000000;
+    --text-primary: #ffffff;
+    --text-secondary: #a3a3a3;
+    --text-muted: #737373;
+    --border: #262626;
+
+    color: var(--text-secondary);
+    background-color: var(--background);
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
@@ -62,34 +75,53 @@
   }
 
   body {
-    font-family: "Geist", system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-family: var(--font-sans);
     line-height: 1.5;
     font-weight: 400;
-    font-size: 15px;
+    font-size: 16px;
     min-height: 100dvh;
     display: flex;
     justify-content: center;
+    align-items: center;
+    padding: 1rem;
   }
 
-  main {
+  @media (min-width: 768px) {
+    body {
+      padding: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    body {
+      padding: 3rem;
+    }
+  }
+
+  .container {
     width: 100%;
-    max-width: 672px;
-    padding: 3rem 1rem 2rem;
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
     position: relative;
+    max-width: 700px;
+    border: 1px dashed var(--border);
   }
 
   section {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    font-size: 15px;
+    border-bottom: 1px dashed var(--border);
+
+    &:last-of-type {
+      border-bottom: 0px;
+    }
 
     h2 {
-      font-weight: 700;
-      color: var(--text-strong);
+      border-bottom: 1px dashed var(--border);
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      padding: 0.875rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
   }
 </style>

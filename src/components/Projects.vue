@@ -5,15 +5,14 @@
 
 <template>
   <section>
-    <h2>Projects</h2>
+    <h2>// Projects</h2>
     <div class="projects">
       <ProjectCard
-        v-for="project in projects"
-        :name="project.name"
-        :description="project.description"
-        :icon="project.icon"
-        :githubUrl="project.githubUrl"
-        :url="project.url"
+        v-for="{ name, description, language, url } in projects"
+        :name="name"
+        :description="description"
+        :language="language"
+        :url="url"
       />
     </div>
   </section>
@@ -21,8 +20,13 @@
 
 <style scoped>
   .projects {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    display: grid;
+    /*grid-template-columns: repeat(auto-fit, minmax(340px, 3fr));*/
+    grid-template-columns: 1fr;
+
+    @media (min-width: 768px) {
+      /*grid-template-columns: repeat(3, 1fr);*/
+      grid-template-columns: 1fr;
+    }
   }
 </style>

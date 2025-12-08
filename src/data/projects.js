@@ -1,9 +1,8 @@
 export const projects = [
   {
     name: "Katt",
-    description: "Simple URL shortener",
-    githubUrl: "https://github.com/syscat29/katt",
-    url: "https://katt-five.vercel.app/",
-    icon: "/images/projects/katt.png",
+    description: "Minimalist URL shortener.",
+    url: "https://github.com/syscat29/katt",
+    language: "typescript",
   },
 ];

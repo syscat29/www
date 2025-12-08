@@ -1,6 +1,5 @@
 <script setup>
-  import Github from "@/icons/Github.vue"
-  import ArrowExternal from "@/icons/ArrowExternal.vue"
+  import ArrowRight from "@/icons/ArrowRight.vue";
 
   const props = defineProps({
     name: {
@@ -11,88 +10,106 @@
       type: String,
       required: true,
     },
-    icon: {
+    language: {
       type: String,
-      default: "/images/projects/default.png",
-    },
-    githubUrl: {
-      type: String,
-      default: null,
     },
     url: {
       type: String,
       default: null,
     },
-  })
+  });
 </script>
 
 <template>
-  <article class="project">
-    <div class="project__meta">
-      <img :src="icon" :alt="name" />
-      <div>
+  <a :href="url" target="_blank" nofollow noreferrer>
+    <div class="project">
+      <div class="project__info">
         <h3>{{ name }}</h3>
         <p>{{ description }}</p>
       </div>
+      <div class="project__meta">
+        <p>{{ language }}</p>
+        <span :href="url">
+          <ArrowRight size="16" />
+        </span>
+      </div>
     </div>
-    <div class="project__links">
-      <a v-if="githubUrl" :href="githubUrl" target="_blank">
-        <Github size="16" />
-      </a>
-      <a v-if="url" :href="url" target="_blank">
-        <ArrowExternal size="16" />
-      </a>
-    </div>
-  </article>
+  </a>
 </template>
 
 <style scoped>
-  .project {
-    background-color: #202020;
-    display: flex;
-    border-radius: 8px;
-    transition: all 0.3s ease-in-out;
+  a {
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    border-color: var(--border);
+    border-style: dashed;
+    border-width: 0;
 
-    .project__meta {
-      display: flex;
-      gap: 0.5rem;
-      padding: 1rem 0.75rem;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
 
-      img {
-        height: 24px;
-        width: 24px;
-      }
+    &:not(:first-child) {
+      border-top-width: 1px;
+    }
 
-      h3 {
-        color: var(--text-primary);
-        font-weight: 500;
-      }
-
-      p {
-        color: var(--text-faint);
-        font-size: 14px;
+    @media (min-width: 768px) {
+      &:not(:first-child) {
+        border-top-width: 0;
+        border-left-width: 1px;
       }
     }
 
-    .project__links {
-      padding: 0.75rem;
-      margin-left: auto;
+    .project {
       display: flex;
-      align-items: start;
-      gap: 0.25rem;
+      flex-direction: column;
+      padding: 1rem;
+      gap: 1rem;
+      height: 100%;
 
-      a {
-        display: inline-flex;
-        justify-content: center;
+      &:hover {
+        .project__meta span {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      .project__info {
+        display: flex;
+        gap: 0.5rem;
+        flex-direction: column;
+
+        h3 {
+          color: var(--text-primary);
+          font-weight: 600;
+        }
+
+        p {
+          color: var(--text-faint);
+          font-size: 0.875rem;
+        }
+      }
+
+      .project__meta {
+        display: flex;
+        justify-content: space-between;
         align-items: center;
-        padding: 0.5rem;
-        border-radius: 4px;
-        color: var(--text-muted);
-        transition: all 0.3s ease;
+        width: 100%;
+        gap: 0.25rem;
+        margin-top: auto;
 
-        &:hover {
-          background-color: #ffffff15;
+        p {
+          font-size: 0.75rem;
+          color: var(--text-muted);
+          font-family: var(--font-mono);
+          text-transform: capitalize;
+        }
+
+        span {
           color: var(--text-strong);
+          opacity: 0;
+          transition: all 0.2s ease-in-out;
+          transform: translateX(-4px);
         }
       }
     }

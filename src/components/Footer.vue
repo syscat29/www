@@ -5,12 +5,10 @@
 <template>
   <footer>
     <p>&copy; Syscat</p>
-    <p>
-      <a href="https://github.com/syscat29/www" target="_blank">
-        Source
-        <ArrowExternal size="12" />
-      </a>
-    </p>
+    <a href="https://github.com/syscat29/www" target="_blank">
+      Source
+      <ArrowExternal size="10" />
+    </a>
   </footer>
 </template>
 
@@ -20,6 +18,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-top: 1px dashed var(--border);
+    padding: 0.5rem 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
 
     a {
       display: flex;
@@ -28,7 +31,7 @@
       transition: all 0.3s ease;
 
       &:hover {
-        color: var(--text-strong);
+        color: var(--text-primary);
       }
     }
   }
