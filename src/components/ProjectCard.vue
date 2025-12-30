@@ -102,7 +102,6 @@
           font-size: 0.75rem;
           color: var(--text-muted);
           font-family: var(--font-mono);
-          text-transform: capitalize;
         }
 
         span {
