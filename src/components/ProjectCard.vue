@@ -10,7 +10,7 @@
       type: String,
       required: true,
     },
-    language: {
+    tech: {
       type: String,
     },
     url: {
@@ -28,7 +28,7 @@
         <p>{{ description }}</p>
       </div>
       <div class="project__meta">
-        <p>{{ language }}</p>
+        <p>{{ tech }}</p>
         <span :href="url">
           <ArrowRight size="16" />
         </span>

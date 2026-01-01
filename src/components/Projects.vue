@@ -8,10 +8,10 @@
     <h2>// Projects</h2>
     <div class="projects">
       <ProjectCard
-        v-for="{ name, description, language, url } in projects"
+        v-for="{ name, description, tech, url } in projects"
         :name="name"
         :description="description"
-        :language="language"
+        :tech="tech"
         :url="url"
       />
     </div>
